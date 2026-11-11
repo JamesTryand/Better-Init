@@ -40,6 +40,7 @@ Typical examples:
 Better Init is opinionated in a few important ways:
 - **Minimal intake**: reuse what the user already said and ask only for missing essentials
 - **User preferences preserved**: include the user's preferred name and core working rules in the drafted `CLAUDE.md`
+- **Standing working rules**: every drafted `CLAUDE.md` gets a `## How to work here` block. It asks instead of picking silently when a request is ambiguous, raises assumptions openly, writes plan steps with checks, sticks to the request, and doesn't invent facts. When merging into an existing `CLAUDE.md`, that block is kept, never dropped
 - **Claude reply efficient mode**: include the full reply-efficiency block only when the user explicitly chooses it
 - **`doc/` by default**: use `doc/` for durable references unless the user wants another folder
 - **Concise `CLAUDE.md`**: keep it focused on durable instructions and file references unless the user opts into the extra verbatim block
@@ -150,6 +151,8 @@ The important idea is simple:
 
 ## Acknowledgement
 Part of the idea is from @Tw93: https://x.com/HiTw93/status/2032091246588518683
+
+The `## How to work here` standing rules are adapted from Andrej Karpathy's observations on LLM coding pitfalls, as packaged in https://github.com/multica-ai/andrej-karpathy-skills.
 
 The verbatim contents used for the optional "Claude reply efficient mode" came from https://github.com/drona23/claude-token-efficient.
 

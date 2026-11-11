@@ -9,7 +9,7 @@ description: >-
   reference docs. This skill is especially relevant when the project is new,
   underspecified, mixed-purpose, or needs file-based context organization.
 metadata:
-  version: "1.2.0"
+  version: "1.3.0"
   scope: personal
 ---
 
@@ -86,6 +86,29 @@ Include these user-level instructions in the draft:
 - Always figure out the clear plan before starting substantive work
 
 Write these as concise project instructions, not as a long biography or transcript.
+
+Always include this `## How to work here` block too. It turns Andrej Karpathy's observations on LLM coding pitfalls into
+rules whose effect can be seen afterwards. Adapt the file names (`README.md` `Plan`, `NEEDS.md`) to what the project
+actually uses, but keep every rule:
+
+```markdown
+## How to work here
+- **Ambiguous → ask, don't pick.** If a request can be read more than one way, list the readings
+  and ask before writing anything. Don't choose one silently.
+- **Raise assumptions, don't bury them.** Before acting on an assumption, tell the user what it is
+  and record it (e.g. under `Assumptions` in the plan or README). If one proves wrong, say so and update it.
+- **Push back when warranted.** If a simpler approach exists, or the request looks mistaken, say so before doing it.
+- **Plan as checks.** Each plan step is `<step> → verify: <command | file | user confirms>`.
+  A step with no check isn't ready: record the gap and ask.
+- **Only what was asked.** Every changed line traces to the request. Something unrelated spotted →
+  mention it; don't fix it unasked. Remove only what your own change made unused.
+- **Simplest thing that works.** No features, abstractions or configurability beyond what was asked.
+- **Don't invent facts.** No command, path, version or number you haven't checked. Unknown → say so.
+- **Done = verified.** A step is done only after its check passed; say what was checked.
+```
+
+When an existing `CLAUDE.md` is being merged rather than replaced, keep any existing `## How to work here` (or
+equivalent standing-rules) block. Never drop or weaken it; add only rules it lacks.
 
 ## Optional Claude reply efficient mode
 
@@ -247,6 +270,9 @@ It should usually include:
 - Ask first when something important is uncertain
 - Establish a clear plan before substantive work
 
+## How to work here
+- (the standing-rules block above, verbatim apart from file names)
+
 ## Build And Test / Research Workflow / Working Approach
 - Include only what is actually relevant to this project type
 
@@ -330,6 +356,7 @@ Avoid these mistakes:
 - skipping the confirmation step before writing files
 - invoking `planning-with-files` before the user approves a non-trivial setup draft
 - asking the user to restate context they already gave you
+- omitting the `## How to work here` block, or dropping an existing one while merging
 
 ## Output expectations
 

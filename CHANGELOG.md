@@ -1,3 +1,12 @@
+## [1.3.0] - 2026-11-11
+### Features
+- Every drafted `CLAUDE.md` now includes a `## How to work here` block of standing rules adapted from Andrej Karpathy's LLM coding guidelines: ask when a request is ambiguous, raise assumptions openly, push back when warranted, write plan steps with checks, change only what was asked, keep it simple, don't invent facts, and count something as done only once it is verified.
+- When merging into an existing `CLAUDE.md`, an existing `## How to work here` block is kept, never dropped or weakened.
+
+### Design Rationale
+- Project templates (e.g. pmt issue templates) carry these rules. Better Init can rewrite their `CLAUDE.md`, so it must keep the rules rather than silently remove them.
+- Each rule is phrased so a reviewer can see whether it was followed, rather than as general advice.
+
 ## [1.2.0] - 2026-03-31
 ### Features
 - Added an optional "Claude reply efficient mode" that inserts the approved instruction block into generated `CLAUDE.md` only when the user explicitly opts in.
