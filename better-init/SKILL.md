@@ -9,7 +9,7 @@ description: >-
   reference docs. This skill is especially relevant when the project is new,
   underspecified, mixed-purpose, or needs file-based context organization.
 metadata:
-  version: "1.3.0"
+  version: "1.3.1"
   scope: personal
 ---
 
@@ -88,27 +88,34 @@ Include these user-level instructions in the draft:
 Write these as concise project instructions, not as a long biography or transcript.
 
 Always include this `## How to work here` block too. It turns Andrej Karpathy's observations on LLM coding pitfalls into
-rules whose effect can be seen afterwards. Adapt the file names (`README.md` `Plan`, `NEEDS.md`) to what the project
-actually uses, but keep every rule:
+rules whose effect can be seen afterwards. Copy it **verbatim**: it is deliberately generic, so it can be identical in
+every project. Say where this project records assumptions, plans and gaps in a separate `## Where things go` section
+right after it (for example "assumptions → README `## Assumptions`; plan → `.scratch/<slug>/` tickets"), using only
+files and conventions the project actually has.
 
 ```markdown
 ## How to work here
-- **Ambiguous → ask, don't pick.** If a request can be read more than one way, list the readings
-  and ask before writing anything. Don't choose one silently.
-- **Raise assumptions, don't bury them.** Before acting on an assumption, tell the user what it is
-  and record it (e.g. under `Assumptions` in the plan or README). If one proves wrong, say so and update it.
-- **Push back when warranted.** If a simpler approach exists, or the request looks mistaken, say so before doing it.
-- **Plan as checks.** Each plan step is `<step> → verify: <command | file | user confirms>`.
-  A step with no check isn't ready: record the gap and ask.
-- **Only what was asked.** Every changed line traces to the request. Something unrelated spotted →
-  mention it; don't fix it unasked. Remove only what your own change made unused.
-- **Simplest thing that works.** No features, abstractions or configurability beyond what was asked.
-- **Don't invent facts.** No command, path, version or number you haven't checked. Unknown → say so.
-- **Done = verified.** A step is done only after its check passed; say what was checked.
+- **Ask or assume, out loud — at any point, not just the start.** When something can be read more
+  than one way:
+  - if the readings lead to different results, or the choice is hard to undo → list them and ask;
+  - otherwise → pick one, say which and why in one line, and record it as an assumption.
+  If something becomes unclear mid-work, stop and name it rather than carrying on.
+- **Correct assumptions openly.** If one proves wrong, say so, update the record, and re-check
+  what was built on it.
+- **Push back when warranted.** If a simpler approach exists or the request looks mistaken, say so
+  before doing it.
+- **Plan as checks.** Each step names its check: `<step> → verify: <command | file | user confirms>`.
+  A step with no check isn't ready.
+- **Only what was asked, simplest that works.** No features, abstractions or clean-ups beyond the
+  request. Note unrelated finds instead of fixing them; remove only what your own change made unused.
+- **Don't invent facts.** No command, path, version or number you haven't checked. Unknown → record the gap.
+- **Done = verified.** Mark a step done only after its check passed, and say what was checked.
+- Small, obvious changes: use judgment — these rules are for anything non-trivial.
 ```
 
 When an existing `CLAUDE.md` is being merged rather than replaced, keep any existing `## How to work here` (or
-equivalent standing-rules) block. Never drop or weaken it; add only rules it lacks.
+equivalent standing-rules) block and its `## Where things go` section. Never drop or weaken them. If the existing block
+is an older version of the one above, replace it with this version, and point out the change in the draft.
 
 ## Optional Claude reply efficient mode
 
@@ -271,7 +278,10 @@ It should usually include:
 - Establish a clear plan before substantive work
 
 ## How to work here
-- (the standing-rules block above, verbatim apart from file names)
+- (the standing-rules block above, verbatim)
+
+## Where things go
+- Assumptions → [where]; plan → [where]; gaps and unknowns → [where]
 
 ## Build And Test / Research Workflow / Working Approach
 - Include only what is actually relevant to this project type

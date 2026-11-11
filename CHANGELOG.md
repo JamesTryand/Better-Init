@@ -1,3 +1,9 @@
+## [1.3.1] - 2026-11-11
+### Changes
+- Reworded `## How to work here` so it can be copied verbatim into any project: one "ask or assume, out loud" rule (ask when the readings lead to different results or the choice is hard to undo; otherwise pick one, say so and record it) that applies mid-work as well as at the start; re-check what was built on an assumption that proves wrong; simplicity merged into scope; an explicit "use judgment for small, obvious changes".
+- Project-specific locations (where assumptions, plans and gaps are recorded) now go in a separate `## Where things go` section, so the block itself never drifts between projects.
+- When merging, an older version of the block is replaced with the current one, and the draft points out the change.
+
 ## [1.3.0] - 2026-11-11
 ### Features
 - Every drafted `CLAUDE.md` now includes a `## How to work here` block of standing rules adapted from Andrej Karpathy's LLM coding guidelines: ask when a request is ambiguous, raise assumptions openly, push back when warranted, write plan steps with checks, change only what was asked, keep it simple, don't invent facts, and count something as done only once it is verified.
